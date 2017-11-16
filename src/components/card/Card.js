@@ -4,65 +4,59 @@ import * as Progress from 'react-native-progress';
 import {Card, CardItem, Icon} from 'native-base';
 import {Actions} from 'react-native-router-flux';
 
-export const Cardd = ({
-  index,p
-}) => {
+export const Cardd = ({index, p}) => {
   detalleView = () => {
-    Actions.Detalle({p:p});
+    Actions.Detalle({p: p});
   };
 
-  const {imagen,
-      titulo,
-      categoria,
-      donadores,
-      tiempo} = p;
+  const {imagen, titulo, categoria, donadores, tiempo} = p;
 
   return (
     <TouchableOpacity onPress={this.detalleView}>
-    <Card style={styles.cardP}>
+      <Card style={styles.cardP}>
 
-      <CardItem style={styles.cardItemS}>
-        <Text style={styles.textTitle}>{titulo}</Text>
-      </CardItem>
+        <CardItem style={styles.cardItemS}>
+          <Text style={styles.textTitle}>{titulo}</Text>
+        </CardItem>
 
-      <CardItem cardBody>
+        <CardItem cardBody>
 
-        <ImageBackground source={{
-            uri: imagen
-          }} style={styles.cardImagen}>
+          <ImageBackground source={{
+              uri: imagen
+            }} style={styles.cardImagen}>
 
-          <View style={styles.viewShadow}>
-            <View style={styles.viewCat}>
-              <Icon name="ios-bookmarks" style={styles.icon}/>
-              <Text style={styles.textCat}>{categoria}</Text>
+            <View style={styles.viewShadow}>
+              <View style={styles.viewCat}>
+                <Icon name="ios-bookmarks" style={styles.icon}/>
+                <Text style={styles.textCat}>{categoria}</Text>
+              </View>
+
             </View>
 
-          </View>
+            <View style={styles.viewNew}>
+              <View>
+                <Progress.Pie progress={0.2} size={25} color={'white'} style={styles.center}/>
+                <Text style={styles.textito}>Recaudado</Text>
+              </View>
 
-          <View style={styles.viewNew}>
-            <View>
-              {/*<Progress.Pie progress={0.2} size={25} color={'white'} style={styles.center}/>*/}
-              <Text style={styles.textito}>Recaudado</Text>
+              <View>
+                <Icon name="person" style={styles.textEnd}/>
+                <Text style={styles.textito}>{donadores}
+                  Donadores</Text>
+              </View>
+
+              <View>
+                <Icon name="ios-clock-outline" style={styles.textEnd}/>
+                <Text style={styles.textito}>{tiempo}
+                  Hrs restantes</Text>
+              </View>
+
             </View>
+          </ImageBackground>
+        </CardItem>
 
-            <View>
-              <Icon name="person" style={styles.textEnd}/>
-              <Text style={styles.textito}>{donadores}
-                Donadores</Text>
-            </View>
-
-            <View>
-              <Icon name="ios-clock-outline" style={styles.textEnd}/>
-              <Text style={styles.textito}>{tiempo}
-                Hrs restantes</Text>
-            </View>
-
-          </View>
-        </ImageBackground>
-      </CardItem>
-
-    </Card>
-  </TouchableOpacity>
+      </Card>
+    </TouchableOpacity>
   );
 };
 
@@ -132,5 +126,5 @@ const styles = StyleSheet.create({
   textEnd: {
     color: 'white',
     alignSelf: 'center'
-  },
+  }
 });

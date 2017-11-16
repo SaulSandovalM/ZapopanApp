@@ -23,22 +23,20 @@ class Principal extends Component {
     this.setState({results})
   };
 
-    render(){
-        const {search} = this.props;
-        const {results} = this.state;
-        return(
-            <Container style={{backgroundColor: '#BDBDBD'}}>
-                <Encabezado onSearch={this.onSearch} />
-                {
-                    !search
-                        ?
-                        <ProyectosList/>
-                        :
-                        <ResultList results={results}/>
-                }
-            </Container>
-        );
-    };
+  render() {
+    const {search} = this.props;
+    const {results} = this.state;
+    return (
+      <Container style={styles.back}>
+        <Encabezado onSearch={this.onSearch}/>
+          {
+            !search
+              ? <ProyectosList/>
+              : <ResultList results={results}/>
+          }
+      </Container>
+    );
+  };
 };
 
 function mapStateToProps(state) {
@@ -47,7 +45,7 @@ function mapStateToProps(state) {
 
 const styles = StyleSheet.create({
   back: {
-    backgroundColor: '#802154'
+    backgroundColor: '#BDBDBD'
   }
 });
 

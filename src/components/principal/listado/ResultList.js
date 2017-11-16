@@ -11,8 +11,6 @@ export const ResultList = ({results}) => {
                 key={index}
                 p={p}
             />)}
-
         </Content>
-
     );
 };

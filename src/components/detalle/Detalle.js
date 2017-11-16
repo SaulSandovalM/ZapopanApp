@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, ScrollView, Image, StatusBar} from 'react-native';
-import {Container, H1, Title, Header, Icon, Button, ListItem, Card, CardItem, Body} from 'native-base';
+import {Container, H1, Title, Icon, Button, ListItem, Card, CardItem, Body} from 'native-base';
 import Cabecera from './Cabecera';
 
 export default class Detalle extends Component <{}> {
@@ -16,7 +16,7 @@ export default class Detalle extends Component <{}> {
             uri: p.imagen
           }}/>
           <H1 style={styles.h1}>{p.titulo}</H1>
-          <Title style={{color: 'black'}}>Por: {p.autor}</Title>
+          <Title style={styles.title1}>Por: {p.autor}</Title>
           <Text style={styles.text}>{p.descripcion}</Text>
           <View style={styles.view}>
             <Icon name="ios-bookmarks" style={styles.margin}/>
@@ -32,17 +32,17 @@ export default class Detalle extends Component <{}> {
           </ListItem>
 
           <View style={styles.card}>
-            <Card>
-              <CardItem header style={{backgroundColor: '#8FB548'}}>
-                <Title style={{color: 'white'}}>Donar $10.00 o mas</Title>
+            <Card style={{borderColor: '#812b80'}}>
+              <CardItem header>
+                <Title>Recompensa destacada</Title>
               </CardItem>
-              <CardItem style={{backgroundColor: '#8FB548'}}>
+              <CardItem>
                 <Body>
-                  <Text style={{color: 'white'}}>
-                    Thank You! (US $1.20) {'\n'}
-                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                    Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
-                    cuando un impresor
+                  <Text>
+                    <Text style={styles.cardItem}>$ 2,500.00 MXN</Text> {'\n'}
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur aut consequuntur,
+                    cupiditate eius est et hic illum ipsum maxime nobis odio, optio placeat reiciendis rerum sed
+                    sequi sunt voluptatum?
                   </Text>
                 </Body>
               </CardItem>
@@ -51,15 +51,13 @@ export default class Detalle extends Component <{}> {
 
             <Card >
               <CardItem header>
-                <Title style={styles.title}>Donar $10.00 o mas</Title>
+                <Title style={styles.title}>Viaje a SF</Title>
               </CardItem>
               <CardItem>
                 <Body>
                   <Text>
-                    Thank You! (US $1.20) {'\n'}
-                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                    Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
-                    cuando un impresor
+                    <Text style={styles.cardItem}>$ 20.00 MXN</Text> {'\n'}
+                    Te picho todo el viaje a san francisco chetito
                   </Text>
                 </Body>
               </CardItem>
@@ -68,15 +66,13 @@ export default class Detalle extends Component <{}> {
 
             <Card>
               <CardItem header>
-                <Title style={styles.title}>Donar $10.00 o mas</Title>
+                <Title style={styles.title}>Viaje a Canada</Title>
               </CardItem>
               <CardItem>
                 <Body>
                   <Text>
-                    Thank You! (US $1.20) {'\n'}
-                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                    Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
-                    cuando un impresor
+                    <Text style={styles.cardItem}>$ 1,000.00 MXN</Text> {'\n'}
+                    Todo pagado con todo y spa a Toronto oh siii
                   </Text>
                 </Body>
               </CardItem>
@@ -145,7 +141,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   title: {
-    color: '#61abf8',
+    color: 'black',
     fontSize: 18
   },
   card: {
@@ -154,5 +150,17 @@ const styles = StyleSheet.create({
   },
   fondo: {
     backgroundColor: '#9ed7f3'
+  },
+  title1: {
+    color: 'black'
+  },
+  cardItem: {
+    color: '#812b80'
+  },
+  color2: {
+    color: 'white'
+  },
+  cardItem2: {
+    backgroundColor: '#8FB548'
   }
 });

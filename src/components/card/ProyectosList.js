@@ -6,30 +6,30 @@ import Card from './Card';
 import {Content} from 'native-base';
 
 class ProyectosList extends Component {
-    state={
-        allProyectos:[]
-    };
+  state={
+    allProyectos:[]
+  };
 
-    componentWillMount(){
-        const {allProyectos} = this.props;
-        this.setState({allProyectos});
-    };
+  componentWillMount(){
+    const {allProyectos} = this.props;
+    this.setState({allProyectos});
+  };
 
-    render(){
-        const {allProyectos} = this.state;
-        return(
+  render(){
+    const {allProyectos} = this.state;
 
-                <Content>
-                    <StatusBar backgroundColor="#802154" barStyle="light-content"/>
-                {allProyectos.map((p, index)=>{
-                    return <Card
-                        key={index}
-                        index={index}
-                        p={p}
-                    />
-                })}
-                </Content>
-
+    return(
+      <Content>
+      <StatusBar backgroundColor="#802154" barStyle="light-content"/>
+        {
+          allProyectos.map((p, index)=>{
+            return <Card
+                key={index}
+                index={index}
+                p={p}
+            />
+        })}
+      </Content>
         );
     };
 };
