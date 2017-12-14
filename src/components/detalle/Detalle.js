@@ -32,9 +32,9 @@ export default class Detalle extends Component <{}> {
           </ListItem>
 
           <View style={styles.card}>
-            <Card style={{borderColor: '#812b80'}}>
+            <Card>
               <CardItem header>
-                <Title>Recompensa destacada</Title>
+                <Title style={styles.title}>Recompensa destacada</Title>
               </CardItem>
               <CardItem>
                 <Body>
